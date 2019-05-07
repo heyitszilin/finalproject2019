@@ -1,7 +1,6 @@
 var scene, camera, renderer, controls, raycaster;
 var geometry, material, mesh;
 var body = document.querySelector('body');
-var mouse = new THREE.Vector2(), INTERSECTED;
 
 // setting up the particles
 var particleCount = 10;
@@ -126,35 +125,6 @@ for (var i = 0; i < particleCount; i++) {
   }
 }
 
-//interactiveness - on mouse click / hovrer
-raycaster.setFromCamera(mouse, camera);
-
-				var intersects = raycaster.intersectObjects( scene.children );
-
-				if ( intersects.length > 0 ) {
-
-					if ( INTERSECTED != intersects[ 0 ].object ) {
-
-						if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-
-						INTERSECTED = intersects[ 0 ].object;
-            console.log(INTERSECTED);
-            console.log(intersects);
-						INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-						INTERSECTED.material.emissive.setHex( 0xff0000 );
-
-					}
-
-				} else {
-
-					if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-
-					INTERSECTED = null;
-
-				}
-
-				renderer.render( scene, camera );
-
 
 // animating stuff, making particles move
 function animate() {
@@ -168,5 +138,3 @@ function animate() {
       particles[i].position.y += particles[i].direction.y;
     }
 }
-
-//time the animations - make the cubes disappear or fade out or something
