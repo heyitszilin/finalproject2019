@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>homework - webgl</title>
+    <style>
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-image:url("media/mountains.gif")
+      }
+
+      audio {
+        position: absolute;
+        z-index: 3;
+      }
+
+      canvas {
+        z-index: 2;
+        position: relative;
+      }
+
+
+    </style>
+  </head>
+
+  <audio controls autoplay>
+      <source src="media/lost.mp3" type="audio/mp3">
+    </audio>
+
+  <body>
+    <script src="js/three.min.js"></script> <!-- three.js library -->
+    <script src="js/OrbitControls.js"></script> <!-- orbit controls -->
+    <script src="js/drawingtwo.js"></script> <!-- my code -->
+  </body>
+</html>

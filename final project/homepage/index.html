@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>BLOOM</title>
+    <style>
+
+      h1 {
+        color: white;
+        text-align: center;
+        padding-left: 40px;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("background.gif");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #container {
+        width: 1000px;
+        padding-top: 100px;
+        padding-left: 80px;
+      }
+
+      img {
+        margin: 80px;
+        float: left;
+        transition: transform 1s;
+      }
+
+      img:hover {
+        -webkit-transform: rotate(360deg) scale(3.0);
+        transform: rotate(360deg) scale(3.0);
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1> blooming </h1>
+
+    <div id="container">
+      <a href="../drawing1/index.html">
+      <img class="opacity" src="bud.png" width="150" height="150">
+    </div>
+
+    <div id="container">
+      <a href="../drawing2/index.html">
+      <img class="opacity" src="blooming.png" width="150" height="150">
+    </div>
+
+    <div id="container">
+      <a href="../drawing3/index.html">
+      <img class="opacity" src="fullboomflower.png" width="150" height="200">
+    </div>
+
+    <script>
+    //changing opacity
+
+    const frame = document.querySelector("#container");
+    const allImages = document.querySelectorAll('img');
+
+    function hoverOpacity(event) {
+      if (event.target.tagName == 'img') {
+        for (let i = 0; i < images.length; i++) {
+          images[i].className = 'makeOpaque';
+        }
+        event.target.className = "opacity";
+        event.target.addEventListener('mouseout', resetOpacity, false);
+      }
+      event.stopPropagation();
+    }
+
+    function resetOpacity() {
+      for (let i = 0; i < images.length; i++) {
+        images[i].className = 'opacity';
+      }
+    }
+
+    frame.addEventListener('mouseover', hoverOpacity, false);
+    </script>
+
+  </body>
+</html>

@@ -1,169 +1,39 @@
 
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8">
-    <title>rosé</title>
+    <title>homework - webgl</title>
     <style>
 
-    body {
-      background-image:none;
-      margin: 0;
-      height: 100vh;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      opacity: 0.8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #everything {
-      width: 500px;
-      height: 500px;
-      perspective: 600px;
-    }
-
-    .rose > * {
-      position: absolute;
-      top: 25%;
-      left: 45%;
-    }
-
-    .rose {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-    }
-
-    .petalone {
-      width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 50px solid transparent;
-      border-top: 170px solid transparent;
-      background-image: url("photo.jpg"); // placeholder
-      top: 10%;
-      left: 45.5%;
-      transform-origin: 28% bottom;
-    }
-
-    .petaltwo {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 30px solid transparent;
-      border-top: 170px solid transparent;
-      background-image: url("photo.jpg"); //placeholder
-      top: 10%;
-      left: 40%;
-      transform-origin: 62.5% bottom;
-    }
-
-    .petalthree {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-top: 170px solid transparent;
-      background-image: url("photo.jpg"); //placeholder
-      top: 10%;
-      left: 40%;
-      transform-origin: center bottom;
-    }
-
-    /* transformations */
-
-    .petal:nth-child(1) {
-      transform: rotateY(0deg) rotate3d(-2, 0.5, 0, 27deg);
-      transition: transform 3s linear;
-    }
-
-    .petal:nth-child(2) {
-      transform: rotateY(60deg) rotate3d(-2, 0.5, 0, 27deg);
-      transition: transform 3s linear;
-    }
-
-    .petal:nth-child(3) {
-      transform: rotateY(120deg) rotate3d(-2, 0.5, 0, 27deg);
-      transition: transform 3s linear;
-    }
-
-    .petal:nth-child(4) {
-      transform: rotateY(180deg) rotate3d(-2, 0.5, 0, 27deg);
-      transition: transform 3s linear;
-    }
-
-    .petal:nth-child(5) {
-      transform: rotateY(240deg) rotate3d(-2, 0.5, 0, 27deg);
-      transition: transform 3s linear;
-    }
-
-    .petal:nth-child(6) {
-      transform: rotateY(320deg) rotate3d(-2, 0.5, 0, 27deg);
-      transition: transform 3s linear;
-    }
-
-    /*animation stuff*/
-
-    .rose {
-      animation: test 8s linear infinite;
-    }
-
-    @keyframes test {
-      from {
-        transform: rotateY(0);
-      } to {
-        transform: rotateY(360deg);
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-image:url("media/newyork.gif");
+        mix-blend-mode: multiply;
       }
-    }
 
-    .petal:nth-child(1):active {
-      transform: rotateY(0deg) rotate3d(-2, 0.5, 0, 180deg);
-      opacity: 0.6;
-    }
+      audio {
+        position: absolute;
+        z-index: 3;
+      }
 
-    .petal:nth-child(2):active {
-      transform: rotateY(60deg) rotate3d(-2, 0.5, 0, 180deg);
-      opacity: 0.6;
-    }
+      canvas {
+        z-index: 2;
+        position: relative;
+      }
 
-    .petal:nth-child(3):active {
-      transform: rotateY(120deg) rotate3d(-2, 0.5, 0, 180deg);
-      opacity: 0.6;
-    }
-
-    .petal:nth-child(4):active {
-      transform: rotateY(180deg) rotate3d(-2, 0.5, 0, 180deg);
-      opacity: 0.6;
-    }
-
-    .petal:nth-child(5):active {
-      transform: rotateY(240deg) rotate3d(-2, 0.5, 0, 180deg);
-      opacity: 0.6;
-    }
-
-    .petal:nth-child(6):active {
-      transform: rotateY(320deg) rotate3d(-2, 0.5, 0, 180deg);
-      opacity: 0.6;
-    }
 
     </style>
   </head>
 
+  <audio controls autoplay>
+      <source src="media/newyork.mp3" type="audio/mp3">
+    </audio>
+
   <body>
-    <div id="everything">
-      <div class="rose">
-        <div class="petal petalone"></div>
-        <div class="petal petaltwo"></div>
-        <div class="petal petalthree"></div>
-        <div class="petal petalone"></div>
-        <div class="petal petaltwo"></div>
-        <div class="petal petalthree"></div>
-      </div>
-    </div>
+    <script src="js/three.min.js"></script> <!-- three.js library -->
+    <script src="js/OrbitControls.js"></script> <!-- orbit controls -->
+    <script src="js/drawingone.js"></script> <!-- my code -->
   </body>
 </html>
